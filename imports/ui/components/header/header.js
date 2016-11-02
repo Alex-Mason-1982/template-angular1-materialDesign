@@ -26,8 +26,6 @@ class headerController {
 
     });
 
-
-
     //toggle side menu
     this.toggle = () => {
       $mdSidenav('menu').toggle();
