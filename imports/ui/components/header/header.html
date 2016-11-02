@@ -1,0 +1,39 @@
+<!-- top menu when large -->
+<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" hide-xs>
+  <!-- pages -->
+  <md-nav-item md-nav-click="header.goTo('home')" name="home">Home</md-nav-item>
+  <span flex></span>
+  <!-- log in button -->
+  <auth-login-button></auth-login-button>
+</md-nav-bar>
+
+<!-- side menu when small -->
+<md-toolbar class="md-hue-2" hide-gt-xs>
+  <div class="md-toolbar-tools">
+    <!-- menu button -->
+    <md-menu md-offset="0 55">
+      <md-button aria-label="login" class="md-icon-button" ng-click="header.toggle()">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <span></span>
+    </md-menu>
+    <span flex></span>
+    <!-- log in button -->
+    <auth-login-button></auth-login-button>
+  </div>
+</md-toolbar>
+
+<md-sidenav
+  class="md-sidenav-left"
+  md-component-id="menu"
+  md-whiteframe="4">
+  <md-toolbar class="md-theme-indigo">
+    <h1 class="md-toolbar-tools">Menu</h1>
+  </md-toolbar>
+  <md-content layout-padding>
+    <md-list md-selected-nav-item="currentNavItem" layout-align="space-around" layout="column">
+      <!-- pages -->
+      <md-list-item ui-sref="home" ng-click="header.toggle()"><span>Home</span></md-list-item>
+    </md-list>
+  </md-content>
+</md-sidenav>

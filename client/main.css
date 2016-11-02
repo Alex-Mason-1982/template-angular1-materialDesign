@@ -1,0 +1,17 @@
+/* styling nav bar */
+md-nav-bar md-nav-ink-bar {
+  background: white;
+  color: white;
+}
+
+md-nav-bar .md-nav-bar {
+  background: #283593;
+}
+
+md-nav-bar .md-button._md-nav-button{
+  color: white;
+}
+
+md-nav-bar .md-button._md-nav-button.md-unselected{
+  color: grey;
+}

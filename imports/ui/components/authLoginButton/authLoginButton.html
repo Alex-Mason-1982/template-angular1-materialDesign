@@ -1,0 +1,55 @@
+<!-- logged out menu -->
+<span ng-if="!authLoginButton.userActive">
+  <md-menu md-offset="0 55">
+    <!-- menu button -->
+    <md-button aria-label="login" class="md-icon-button" ng-click="$mdOpenMenu($event)" style="color:white;">
+      <md-icon style="color:white;">account_box</md-icon>
+    </md-button>
+    <!-- menu -->
+    <md-menu-content width="4" style="height:210px;">
+      <!-- email login -->
+      <form name="emailLoginForm" id="emailLoginForm" ng-submit="authLoginButton.emailLogin()">
+        <md-menu-item style="height:110px;">
+          <span md-menu-align-target>
+            <md-input-container class="md-block" style="height:25px;">
+              <label>Email</label>
+              <input ng-model="authLoginButton.credentials.email">
+            </md-input-container>
+            <md-input-container class="md-block" style="height:25px;">
+              <label>Password</label>
+              <input type="password" ng-model="authLoginButton.credentials.password">
+            </md-input-container>
+          </span>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button type="submit">Login</md-button>
+        </md-menu-item>
+      </form>
+      <!-- create account -->
+      <md-menu-item>
+        <md-button ui-sref="profile">Create Account</md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+</span>
+
+<!-- logged in menu -->
+<span ng-if="authLoginButton.userActive">
+  <md-menu md-offset="0 55">
+    <!-- menu button -->
+    <md-button aria-label="login" ng-click="$mdOpenMenu($event)" style="color:white;">
+      <md-icon style="color:white;">account_box</md-icon> {{authLoginButton.user.profile.name}}
+    </md-button>
+    <!-- menu -->
+    <md-menu-content width="4">
+      <!-- create account -->
+      <md-menu-item>
+        <md-button ui-sref="profile">View Profile</md-button>
+      </md-menu-item>
+      <!-- sign out -->
+      <md-menu-item>
+        <md-button ng-click="authLoginButton.logOut()">Sign Out</md-button>
+      </md-menu-item>
+    </md-menu-content>
+  </md-menu>
+</span>
